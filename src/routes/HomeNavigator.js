@@ -15,45 +15,58 @@ import EventDetails from '../screens/HomeScreen/InvitedEvents/EventDetails';
 import EventInvitedDetails from '../screens/HomeScreen/InvitedEvents/EventInvitedDetails';
 
 const RootStackNavigator = createStackNavigator();
-
-const RootBottomTabStack = props => {
+const HomeStack = props => {
   return (
+    <View style={{flex: 1}}>
+    <CustomHeader props={props} />
     <RootStackNavigator.Navigator initialRouteName="HomeScreen">
-      <RootStackNavigator.Screen
+    <RootStackNavigator.Screen
         name="HomeScreen"
         component={HomeScreen}
+        options={{gestureEnabled: false, headerShown: false}}
+      />
+      </RootStackNavigator.Navigator>
+      </View>
+  );
+};
+const RootBottomTabStack = props => {
+  return (
+    <RootStackNavigator.Navigator initialRouteName="HomeStack">
+          <RootStackNavigator.Screen
+        name="HomeStack"
+        component={HomeStack}
         options={{gestureEnabled: false, headerShown: false}}
       />
       <RootStackNavigator.Screen
         name="ViewTodayEvent"
         component={ViewTodayEvent}
-        options={{gestureEnabled: false, headerShown: false}}
+        options={{gestureEnabled: true, headerShown: true}}
       />
       <RootStackNavigator.Screen
         name="ViewMyEvent"
         component={ViewMyEvent}
-        options={{gestureEnabled: false, headerShown: false}}
+        options={{gestureEnabled: true, headerShown: true}}
       />
       <RootStackNavigator.Screen
         name="ViewEventAttend"
         component={ViewEventAttend}
-        options={{gestureEnabled: false, headerShown: false}}
+        options={{gestureEnabled: true, headerShown: true}}
       />
       <RootStackNavigator.Screen
         name="EventDetails"
         component={EventDetails}
-        options={{gestureEnabled: false, headerShown: false}}
+        options={{gestureEnabled: true, headerShown: true}}
       />
       <RootStackNavigator.Screen
         name="EventInvitedDetails"
         component={EventInvitedDetails}
-        options={{gestureEnabled: false, headerShown: false}}
+        options={{gestureEnabled: true, headerShown: true}}
       />
     </RootStackNavigator.Navigator>
   );
 };
 
-const GuestBottomTabStack = props => {
+const SecondBottomTabStack = props => {
   return (
     <RootStackNavigator.Navigator initialRouteName="Event">
       <RootStackNavigator.Screen
@@ -65,7 +78,7 @@ const GuestBottomTabStack = props => {
   );
 };
 
-const SecondBottomTabStack = props => {
+const  GuestBottomTabStack = props => {
   return (
     <RootStackNavigator.Navigator initialRouteName="GuestList">
       <RootStackNavigator.Screen
@@ -100,9 +113,8 @@ const FourthBottomTabStack = props => {
   );
 };
 
+
 const HomeNavigator = props => (
-  <View style={{flex: 1}}>
-    <CustomHeader props={props} />
     <RootStackNavigator.Navigator
       initialRouteName="RootBottomTabStack"
       tabBarOptions={{
@@ -226,7 +238,6 @@ const HomeNavigator = props => (
         }}
       />
     </RootStackNavigator.Navigator>
-  </View>
 );
 
 export default HomeNavigator;

@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 
   headerTextContainer: {
     width:scale(80),
-    height: scale(60),
+    height: scale(80),
   },
 
   headerText: {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   headerRight: {
-    width:scale(150),
+    width:scale(170),
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems:"center",

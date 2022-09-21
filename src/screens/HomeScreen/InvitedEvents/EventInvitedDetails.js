@@ -2,10 +2,11 @@ import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {COLORS, IMAGE} from '../../../common/constants';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const EventInvitedDetails = () => {
   return (
-    <View style={styles.MainContainer}>
+    <ScrollView style={styles.MainContainer}>
       <View style={styles.container}>
               <Image source={IMAGE.lorem} style={styles.headerImageStyle} />
               <View style={{ width:'100%', left:scale(40), flexDirection: "row" ,alignItems:"center",justifyContent:"center",paddingTop:scale(10)}}>
@@ -29,7 +30,7 @@ const EventInvitedDetails = () => {
           Sub Events
         </Text>
       </View>
-      <ScrollView contentContainerStyle={styles.scrollView}>
+      <View style={styles.scrollView}>
         <View style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem1} style={styles.subImageStyle} />
@@ -65,9 +66,34 @@ const EventInvitedDetails = () => {
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
         </View>
-          </ScrollView>
-          <Text>asd</Text>
-    </View>
+        <View style={styles.boxContainer}>
+          <View style={styles.imageContainer}>
+            <Image source={IMAGE.lorem2} style={styles.subImageStyle} />
+          </View>
+          <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
+          <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
+        </View>
+        <View style={styles.boxContainer}>
+          <View style={styles.imageContainer}>
+            <Image source={IMAGE.lorem2} style={styles.subImageStyle} />
+          </View>
+          <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
+          <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
+        </View>
+        <View style={styles.footerContainer}>
+          <View style={[styles.optionContainer, { backgroundColor: "#BCF7BA" }]}><Text style={{color:"#3FBF3F"}}>Attend</Text></View>
+          <View style={[styles.optionContainer,{backgroundColor:"#F9D1D1"}]}><Text style={{color:"#F13B3B"}}>Not attend</Text></View>
+          <View style={[styles.optionContainer,{backgroundColor:"#F9F3E8"}]}><Text style={{color:"#ECBA5F"}}>May be attend</Text></View>
+        </View>
+        <View style={{ width: "100%", height: verticalScale(60), alignItems: "center", justifyContent: "center" }}>
+          <TouchableOpacity
+          style={{width:scale(320),borderRadius:moderateScale(4), backgroundColor:"#09F2DF",height:verticalScale(50),alignItems:"center",justifyContent:"center"}}
+          >
+          <Text>View invitation card</Text>
+          </TouchableOpacity>
+        </View>
+          </View>
+    </ScrollView>
   );
 };
 
@@ -135,7 +161,6 @@ const styles = StyleSheet.create({
   scrollView: {
     width: '100%',
     flexWrap: 'wrap',
-    height: verticalScale(250),
     flexDirection: 'row',
   },
   imageContainer: {
@@ -155,4 +180,19 @@ const styles = StyleSheet.create({
     height: '100%',
     resizeMode: 'stretch',
   },
+  footerContainer: {
+    width: "100%",
+    height: verticalScale(60),
+    backgroundColor: "white",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    flexDirection:"row"
+  },
+  optionContainer: {
+    width: scale(100),
+    height: verticalScale(40),
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius:moderateScale(10)
+  }
 });

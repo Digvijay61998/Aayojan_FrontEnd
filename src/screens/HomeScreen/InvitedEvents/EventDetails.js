@@ -5,7 +5,7 @@ import {COLORS, IMAGE} from '../../../common/constants';
 
 const EventDetails = () => {
   return (
-    <View style={styles.MainContainer}>
+    <ScrollView style={styles.MainContainer}>
       <View style={styles.container}>
         <Image source={IMAGE.lorem} style={styles.headerImageStyle} />
         <View style={styles.content}>
@@ -16,15 +16,16 @@ const EventDetails = () => {
       </View>
       <View style={styles.header}>
         <Text
-          style={{
-            color: '#15AED6',
-            fontSize: moderateScale(18),
-            fontFamily: 'Poppins-SemiBold',
-          }}>
+         style={{
+          color: '#15AED6',
+                    fontSize: moderateScale(16),
+          fontWeight:'bold',
+          fontFamily: 'Poppins-SemiBold',
+        }}>
           Sub Events
         </Text>
       </View>
-      <ScrollView contentContainerStyle={styles.scrollView}>
+      <View style={styles.scrollView}>
         <View style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem1} style={styles.subImageStyle} />
@@ -60,8 +61,12 @@ const EventDetails = () => {
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
         </View>
-      </ScrollView>
-    </View>
+      </View>
+      <View style={styles.footerContainer}>
+      <View style={[styles.buttonContainer,{backgroundColor: "#E9F9F4",}]}><Text style={{color:"#31D6A2"}}>View invitation card</Text></View>
+        <View style={[styles.buttonContainer,{backgroundColor: "#FCFFE3",}]}><Text style={{color:"#95A704"}}>Add travel plan</Text></View>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -118,7 +123,7 @@ const styles = StyleSheet.create({
   },
   boxContainer: {
     width: scale(161),
-    height: verticalScale(100),
+    height: verticalScale(110),
     alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: 'white',
@@ -128,12 +133,11 @@ const styles = StyleSheet.create({
   scrollView: {
     width: '100%',
     flexWrap: 'wrap',
-    minHeight: verticalScale(270),
     flexDirection: 'row',
   },
   imageContainer: {
     width: '100%',
-    height: verticalScale(60),
+    height: verticalScale(70),
     overflow: 'hidden',
     borderTopLeftRadius: moderateScale(10),
     borderTopRightRadius: moderateScale(10),
@@ -148,4 +152,21 @@ const styles = StyleSheet.create({
     height: '100%',
     resizeMode: 'stretch',
   },
+  footerContainer: {
+    marginTop:verticalScale(15),
+    width: '100%',
+    height:verticalScale(60),
+    alignContent: "center",
+    justifyContent:"space-evenly",
+    flexDirection: "row",
+    backgroundColor:"white"
+  },
+  buttonContainer: {
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent:"center",
+    width: scale(130),
+    height: verticalScale(40),
+    borderRadius:moderateScale(10)
+  }
 });

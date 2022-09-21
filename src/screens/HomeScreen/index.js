@@ -6,6 +6,7 @@ import { scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import TodayEvents from './TodayEvents';
 import MyEvent from './MyEvent';
 import InvitedEvents from './InvitedEvents';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const HomeScreen = (props) => {
   const [index, setIndex] = useState(0)
@@ -61,7 +62,22 @@ const HomeScreen = (props) => {
       </View>
       <TodayEvents props={props}/>
       <MyEvent props={props}/>
-      <InvitedEvents props={props}/>
+      <InvitedEvents props={props} />
+      <View style={{width:'100%',flexDirection:"row",justifyContent:"space-evenly"}}>
+      <TouchableOpacity>
+        <Text>HOME</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+      onPress={()=>props.navigation.navigate('GuestBottomTabStack')}
+      >
+        <Text>GuestList</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+      onPress={()=>props.navigation.navigate('SecondBottomTabStack')}
+      >
+        <Text>Event</Text>
+      </TouchableOpacity>
+      </View>
       </ScrollView>
   )
 }
