@@ -9,6 +9,8 @@ const option = require("../../assets/icons/option.png")
 const user = require("../../assets/icons/user.png")
 
 
+const forwardArrow = require("../../assets/icons/forwardArrow.png")
+const addIcon = require("../../assets/icons/addButton.png")
 
 export default {
     logo,
@@ -19,5 +21,7 @@ export default {
     add,
     home,
     option,
-    user
+    user,
+    forwardArrow,
+    addIcon
 }

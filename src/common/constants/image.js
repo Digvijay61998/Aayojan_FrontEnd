@@ -15,6 +15,9 @@ const onBoard2 = require('../../assets/image/onBoard2.jpeg');
 const onBoard3 = require('../../assets/image/onBoard3.jpeg');
 const onBoard4 = require('../../assets/image/onBoard4.jpeg');
 
+const backButton = require('../../assets/image/backButton1.png');
+const searchIcon = require('../../assets/icons/searchIcon.png');
+const groupIcon = require('../../assets/icons/groupColor.png');
 
 
 export default {
@@ -33,5 +36,8 @@ export default {
     onBoard1,
     onBoard2,
     onBoard3,
-    onBoard4
+    onBoard4,
+    backButton,
+    searchIcon,
+    groupIcon,
 }
