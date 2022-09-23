@@ -105,8 +105,7 @@ const styles = StyleSheet.create({
         height: verticalScale(60),
         borderTopRightRadius: moderateScale(10),
         borderTopLeftRadius: moderateScale(10),
-        overFlow: 'hidden',
-        backgroundColor: 'red',
+        overflow: 'hidden',
       },
       eventType: {
         width: scale(105),
@@ -168,7 +167,7 @@ const styles = StyleSheet.create({
   imageStyle: {
     width: '100%',
     height:'100%',
-    resizeMode: 'contain',
+    resizeMode: 'stretch',
   },
   viewImage: {
     flex: 1,

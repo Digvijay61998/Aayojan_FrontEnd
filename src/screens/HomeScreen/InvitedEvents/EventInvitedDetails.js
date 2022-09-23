@@ -1,98 +1,162 @@
 import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
-import React from 'react';
+import React,{useState} from 'react';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {COLORS, IMAGE} from '../../../common/constants';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import SubEvents from '../../../common/component/SubEvents';
 
-const EventInvitedDetails = () => {
+const EventInvitedDetails = props => {
+
+  const[visibleModel,setVisibleModel]=useState(false)
+
+  const handleSubmit = () => {
+    setVisibleModel(false)
+}
+
+
   return (
     <ScrollView style={styles.MainContainer}>
       <View style={styles.container}>
-              <Image source={IMAGE.lorem} style={styles.headerImageStyle} />
-              <View style={{ width:'100%', left:scale(40), flexDirection: "row" ,alignItems:"center",justifyContent:"center",paddingTop:scale(10)}}>
-                  <View style={{ width: scale(60), height: verticalScale(90),borderRadius: moderateScale(10),overflow:'hidden'}}>
-                      <Image source={IMAGE.lorem1} style={styles.subImageStyle}/></View>
-        <View style={styles.content}>
-          <Text style={styles.headerText}>Vishal Wedding Events</Text>
-          <Text style={styles.dateText}>Thu, Aug 30 at 08:30 PM</Text>
-          <Text style={styles.loactionText}>GHODESHWER, united kingdom</Text>
+        <Image source={IMAGE.lorem} style={styles.headerImageStyle} />
+        <View
+          style={{
+            width: '100%',
+            left: scale(40),
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingTop: scale(10),
+          }}>
+          <View
+            style={{
+              width: scale(60),
+              height: verticalScale(90),
+              borderRadius: moderateScale(10),
+              overflow: 'hidden',
+            }}>
+            <Image source={IMAGE.lorem1} style={styles.subImageStyle} />
+          </View>
+          <View style={styles.content}>
+            <Text style={styles.headerText}>Vishal Wedding Events</Text>
+            <Text style={styles.dateText}>Thu, Aug 30 at 08:30 PM</Text>
+            <Text style={styles.loactionText}>GHODESHWER, united kingdom</Text>
+          </View>
         </View>
-              </View>
       </View>
       <View style={styles.header}>
         <Text
           style={{
             color: '#15AED6',
-                      fontSize: moderateScale(16),
-            fontWeight:'bold',
+            fontSize: moderateScale(16),
+            fontWeight: 'bold',
             fontFamily: 'Poppins-SemiBold',
           }}>
           Sub Events
         </Text>
       </View>
       <View style={styles.scrollView}>
-        <View style={styles.boxContainer}>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('SubEventDetails')}
+          style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem1} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('SubEventDetails')}
+          style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('SubEventDetails')}
+          style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem2} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('SubEventDetails')}
+          style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem1} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('SubEventDetails')}
+          style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem2} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('SubEventDetails')}
+          style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem2} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('SubEventDetails')}
+          style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem2} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.footerContainer}>
-          <View style={[styles.optionContainer, { backgroundColor: "#BCF7BA" }]}><Text style={{color:"#3FBF3F"}}>Attend</Text></View>
-          <View style={[styles.optionContainer,{backgroundColor:"#F9D1D1"}]}><Text style={{color:"#F13B3B"}}>Not attend</Text></View>
-          <View style={[styles.optionContainer,{backgroundColor:"#F9F3E8"}]}><Text style={{color:"#ECBA5F"}}>May be attend</Text></View>
-        </View>
-        <View style={{ width: "100%", height: verticalScale(60), alignItems: "center", justifyContent: "center" }}>
           <TouchableOpacity
-          style={{width:scale(320),borderRadius:moderateScale(4), backgroundColor:"#09F2DF",height:verticalScale(50),alignItems:"center",justifyContent:"center"}}
-          >
-          <Text>View invitation card</Text>
+            onPress={()=>setVisibleModel(true)}
+            style={[styles.optionContainer, {backgroundColor: '#BCF7BA'}]}>
+            <Text style={{color: '#3FBF3F'}}>Attend</Text>
+          </TouchableOpacity>
+          {/* Model */}
+          <SubEvents
+            visible={visibleModel}
+            handleFun={handleSubmit}
+          /> 
+          <View style={[styles.optionContainer, {backgroundColor: '#F9D1D1'}]}>
+            <Text style={{color: '#F13B3B'}}>Not attend</Text>
+          </View>
+          <View style={[styles.optionContainer, {backgroundColor: '#F9F3E8'}]}>
+            <Text style={{color: '#ECBA5F'}}>May be attend</Text>
+          </View>
+        </View>
+        <View
+          style={{
+            width: '100%',
+            height: verticalScale(60),
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <TouchableOpacity
+            onPress={()=>props.navigation.navigate('ViewInvitationCard')}
+            style={{
+              width: scale(320),
+              borderRadius: moderateScale(4),
+              backgroundColor: '#09F2DF',
+              height: verticalScale(50),
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Text>View invitation card</Text>
           </TouchableOpacity>
         </View>
-          </View>
+      </View>
     </ScrollView>
   );
 };
@@ -121,8 +185,8 @@ const styles = StyleSheet.create({
   content: {
     width: '100%',
     height: verticalScale(80),
-      padding: scale(5),
-      paddingLeft:scale(20),
+    padding: scale(5),
+    paddingLeft: scale(20),
     justifyContent: 'space-evenly',
     alignItems: 'flex-start',
   },
@@ -181,18 +245,18 @@ const styles = StyleSheet.create({
     resizeMode: 'stretch',
   },
   footerContainer: {
-    width: "100%",
+    width: '100%',
     height: verticalScale(60),
-    backgroundColor: "white",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    flexDirection:"row"
+    backgroundColor: 'white',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   optionContainer: {
     width: scale(100),
     height: verticalScale(40),
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius:moderateScale(10)
-  }
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: moderateScale(10),
+  },
 });

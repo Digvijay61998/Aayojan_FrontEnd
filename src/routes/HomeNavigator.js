@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View} from 'react-native';
+import {Image,Text, View} from 'react-native';
 import {ICONS} from '../common/constants';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
@@ -13,6 +13,9 @@ import ViewMyEvent from '../screens/HomeScreen/MyEvent/ViewMyEvent';
 import ViewEventAttend from '../screens/HomeScreen/InvitedEvents/ViewEventAttend';
 import EventDetails from '../screens/HomeScreen/InvitedEvents/EventDetails';
 import EventInvitedDetails from '../screens/HomeScreen/InvitedEvents/EventInvitedDetails';
+import ViewInvitationCard from '../screens/HomeScreen/InvitedEvents/ViewInvitationCard';
+import TravelDetail from '../screens/HomeScreen/InvitedEvents/TravelDetail';
+import SubEventDetails from '../screens/HomeScreen/InvitedEvents/SubEventDetails';
 
 const RootStackNavigator = createStackNavigator();
 const HomeStack = props => {
@@ -40,28 +43,101 @@ const RootBottomTabStack = props => {
       <RootStackNavigator.Screen
         name="ViewTodayEvent"
         component={ViewTodayEvent}
-        options={{gestureEnabled: true, headerShown: true}}
+               options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+      },
+                 headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Today events</Text>
+                   <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                   </View>
+      ),
+      }}
       />
       <RootStackNavigator.Screen
         name="ViewMyEvent"
         component={ViewMyEvent}
-        options={{gestureEnabled: true, headerShown: true}}
+           options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+      },
+                 headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Today events</Text>
+                   <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                   </View>
+      ),
+      }}
       />
       <RootStackNavigator.Screen
         name="ViewEventAttend"
         component={ViewEventAttend}
-        options={{gestureEnabled: true, headerShown: true}}
+           options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+      },
+                 headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Event to attend</Text>
+                   <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                   </View>
+      ),
+      }}
       />
       <RootStackNavigator.Screen
         name="EventDetails"
         component={EventDetails}
-        options={{gestureEnabled: true, headerShown: true}}
+           options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+      },
+                 headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Event to attend</Text>
+                   <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                   </View>
+      ),
+      }}
       />
       <RootStackNavigator.Screen
         name="EventInvitedDetails"
         component={EventInvitedDetails}
-        options={{gestureEnabled: true, headerShown: true}}
+           options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+      },
+                 headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Event Details</Text>
+                   <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                   </View>
+      ),
+      }}
       />
+           <RootStackNavigator.Screen
+        name="ViewInvitationCard"
+        component={ViewInvitationCard}
+    options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+      },
+                 headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>View Invitation Card</Text>
+                   <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                   </View>
+      ),
+      }}
+      />
+                 <RootStackNavigator.Screen
+        name="TravelDetail"
+        component={TravelDetail}
+    options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+      },
+                 headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Travel detail</Text>
+                   <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                   </View>
+      ),
+      }}
+        
+      />
+                     <RootStackNavigator.Screen
+        name="SubEventDetails"
+        component={SubEventDetails}
+    options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+      },
+                 headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Sub Event Details</Text>
+                   <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                   </View>
+      ),
+      }}
+      />
+      
     </RootStackNavigator.Navigator>
   );
 };

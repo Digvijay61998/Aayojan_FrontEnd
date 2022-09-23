@@ -28,7 +28,7 @@ const UserLogin = (props) => {
                   //  value={values.email}
                   //  onChangeText={handleChange('email')}
                    placeholder="Email Address"
-                   placeholderTextColor="#A7B0C0"
+                   placeholderTextColor="#1D2226"
                    autoComplete="cc-number"
             />
                <TextInput
@@ -38,7 +38,7 @@ const UserLogin = (props) => {
                   //  value={values.email}
                   //  onChangeText={handleChange('email')}
                    placeholder="Password"
-                   placeholderTextColor="#A7B0C0"
+                   placeholderTextColor="#1D2226"
                    autoComplete="cc-number"
           />
           <TouchableOpacity
@@ -145,7 +145,7 @@ shadowRadius: 4.65,
   LoginButtonText: {
     fontSize: scale(16),
     color: COLORS.black,
-    fontFamily: 'Roboto-Black',
+    fontFamily: 'Roboto-Medium',
   },
   socialPlatform: {
     flex: 0.5,

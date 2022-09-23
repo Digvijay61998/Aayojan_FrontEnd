@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
         borderTopRightRadius: moderateScale(10),
         borderTopLeftRadius: moderateScale(10),
         overFlow: 'hidden',
-        backgroundColor: 'red',
       },
       eventType: {
         width: scale(105),
