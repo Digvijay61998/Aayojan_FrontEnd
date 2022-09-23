@@ -23,7 +23,7 @@ export class OnBoardingScreen extends Component {
       boardinData: [
         {
           // backgroundColor: '#59b2ab',
-          image: <Image style={styles.sliderImage} source={IMAGE.onboard} />,
+          image: <Image style={styles.sliderImage} source={IMAGE.onBoard1} />,
           title: (
             <Text style={styles.slidesTextUp}>
               Manage your Guests
@@ -38,7 +38,7 @@ export class OnBoardingScreen extends Component {
         },
         {
           // backgroundColor: '#59b2ab',
-          image: <Image style={styles.sliderImage} source={IMAGE.onboard} />,
+          image: <Image style={styles.sliderImage} source={IMAGE.onBoard4} />,
           title: (
             <Text style={styles.slidesTextUp}>Organize your calling Methods</Text>
           ),
@@ -49,7 +49,7 @@ export class OnBoardingScreen extends Component {
         },
         {
           // backgroundColor: '#59b2ab',
-          image: <Image style={styles.sliderImage} source={IMAGE.onboard} />,
+          image: <Image style={styles.sliderImage} source={IMAGE.onBoard3} />,
           title: (
             <Text style={styles.slidesTextUp}>
               Mange their Travel Plans

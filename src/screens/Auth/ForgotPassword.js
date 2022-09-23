@@ -20,7 +20,7 @@ const ForgotPassword = (props) => {
                   //  value={values.email}
                   //  onChangeText={handleChange('email')}
                    placeholder="Email Address"
-                   placeholderTextColor="black"
+                   placeholderTextColor="#1D2226"
                    autoComplete="cc-number"
         />
              <View style={styles.button}>
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
           backgroundColor:COLORS.primary
         },
   SecondaryContainer: {
+    marginTop:scale(-50),
           padding:scale(20),
           flex: 2,
           width:'100%',
@@ -112,6 +113,7 @@ const styles = StyleSheet.create({
           width: scale(290),
           borderWidth:1,
           borderColor: "#e8edf9",
+          fontFamily:"Roboto-Medium",
           backgroundColor:COLORS.primary,
           elevation: 4,
           borderRadius: moderateScale(5),
@@ -137,7 +139,7 @@ const styles = StyleSheet.create({
         LoginButtonText: {
           fontSize: scale(16),
           color: COLORS.black,
-          fontFamily: 'Roboto-Black',
+          fontFamily: 'Roboto-Medium',
         },
         socialPlatform: {
           flex: 0.5,

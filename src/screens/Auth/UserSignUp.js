@@ -23,6 +23,7 @@ import * as yup from 'yup';
 import { scale ,verticalScale} from 'react-native-size-matters';
 
 const UserSignUp = props => {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
   const handleSubmit = async val => {
     console.log('val', val);
@@ -75,7 +76,7 @@ const UserSignUp = props => {
           alignItems: 'baseline',
           marginTop: Scale(10),
         }}>
-        <Text style={{fontSize:Scale(15),width:'100%',color:COLORS.black,fontFamily:"Poppins-SemiBold"}}>
+        <Text style={{fontSize:Scale(15),width:'100%',color:COLORS.black,fontFamily:"Poppins-Medium"}}>
           Register with account details, to start your acount !
         </Text>
       </View>
@@ -116,7 +117,7 @@ const UserSignUp = props => {
                   value={values.Name}
                   onChangeText={handleChange('Name')}
                   placeholder="First Name"
-                  placeholderTextColor="#A7B0C0"
+                  placeholderTextColor="#1D2226"
                   autoComplete="cc-number"
                 />
               </View>
@@ -134,7 +135,7 @@ const UserSignUp = props => {
                   value={values.email}
                   onChangeText={handleChange('email')}
                   placeholder="Last Name"
-                  placeholderTextColor="#A7B0C0"
+                  placeholderTextColor="#1D2226"
                   autoComplete="cc-number"
                 />
               </View>
@@ -152,7 +153,7 @@ const UserSignUp = props => {
                   value={values.Set_Password}
                   onChangeText={handleChange('Set_Password')}
                   placeholder="Email Address"
-                  placeholderTextColor="#A7B0C0"
+                  placeholderTextColor="#1D2226"
                   autoComplete="cc-number"
                 />
               </View>
@@ -170,7 +171,7 @@ const UserSignUp = props => {
                   value={values.confirm_password}
                   onChangeText={handleChange('confirm_password')}
                   placeholder="contact number"
-                  placeholderTextColor="#A7B0C0"
+                  placeholderTextColor="#1D2226"
                   autoComplete="cc-number"
                 />
               </View>
@@ -193,7 +194,7 @@ const UserSignUp = props => {
                   onChangeText={handleChange('Set_Pin')}
                   secureTextEntry={true}
                   placeholder="Password"
-                  placeholderTextColor="#A7B0C0"
+                  placeholderTextColor="#1D2226"
                   autoComplete="cc-number"
                 />
               </View>
@@ -216,7 +217,7 @@ const UserSignUp = props => {
                   onChangeText={handleChange('Confirm_Pin')}
                   secureTextEntry={true}
                   placeholder="Confirm Password"
-                  placeholderTextColor="#A7B0C0"
+                  placeholderTextColor="#1D2226"
                   autoComplete="cc-number"
                 />
               </View>
@@ -226,19 +227,21 @@ const UserSignUp = props => {
               <View style={{width:Scale(350),flexDirection:"column"}}>
                 <View style={{ width: '100%' ,flexDirection:"row",alignItems:"center",justifyContent:'flex-start'}}>
                   <TouchableOpacity
+                    onPress={() => setToggleCheckBox(true)}
                     style={styles.checkbox}
                   >
-
+                    {toggleCheckBox == true && <View style={{ width: scale(8), height: verticalScale(8), backgroundColor: "#1A1A1A", }}></View>}
                   </TouchableOpacity>
-                <Text>  I agree with the <Text style={{color:"#5f92a9"}}>Terms and Conditions </Text></Text>
+                <Text>  I agree with the <Text style={{color:"#0090FE", textDecorationLine: 'underline',}}>Terms and Conditions </Text></Text>
                 </View>
                 <View style={{ width: '100%' ,flexDirection:"row",alignItems:"center",justifyContent:'flex-start'}}>
                   <TouchableOpacity
                     style={styles.checkbox}
                   >
+                    {toggleCheckBox == true && <View style={{ width: scale(8), height: verticalScale(8), backgroundColor: "#1A1A1A", }}></View>}
 
                   </TouchableOpacity>
-                <Text>  I agree with the <Text style={{color:"#5f92a9"}}>Privacy Policy </Text></Text>
+                <Text>  I agree with the <Text style={{color:"#0090FE", textDecorationLine: 'underline',}}>Privacy Policy </Text></Text>
                 </View>
                </View>
               <View
@@ -300,8 +303,10 @@ const styles = StyleSheet.create({
    resizeMode: 'stretch',
   },
   checkbox: {
-    width: Scale(10),
-    height: verticalScale(10),
+    width: Scale(15),
+    height: verticalScale(15),
+    alignItems: "center",
+    justifyContent:"center",
     borderWidth: 2,
     borderColor:COLORS.lightBlack
   },
@@ -318,7 +323,7 @@ const styles = StyleSheet.create({
   LoginButtonText: {
     fontSize: Scale(16),
     color: COLORS.black,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: 'Poppins-Medium',
   },
 });
 

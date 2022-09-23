@@ -1,5 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
+import SubEventDetails from "../screens/HomeScreen/InvitedEvents/SubEventDetails";
 import OnBoardingScreen from "../screens/OnBoardingScreen";
 import SplashScreen from "../screens/Splash/Splash.js";
 import AuthNavigator from "./AuthNavigator";

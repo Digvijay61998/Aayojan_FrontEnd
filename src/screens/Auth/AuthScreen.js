@@ -17,7 +17,7 @@ const AuthScreen = (props) => {
   return (
       <View style={styles.container}>
              <View style={styles.primaryContainer}>
-      <Text>image</Text>
+      {/* <Text>image</Text> */}
           </View>
           <View style={styles.secondaryContainer}>
           <Text style={styles.heaterText}>Excited?!</Text>

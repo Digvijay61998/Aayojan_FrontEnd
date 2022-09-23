@@ -63,19 +63,29 @@ const HomeScreen = (props) => {
       <TodayEvents props={props}/>
       <MyEvent props={props}/>
       <InvitedEvents props={props} />
-      <View style={{width:'100%',flexDirection:"row",justifyContent:"space-evenly"}}>
-      <TouchableOpacity>
-        <Text>HOME</Text>
+      <View style={{width:'100%',height:verticalScale(50),flexDirection:"row",justifyContent:"space-around",alignItems:"center", backgroundColor:"white",marginTop:verticalScale(10)}}>
+        <TouchableOpacity
+        style={{width:scale(22),height:verticalScale(22)}}
+        >
+          <Image source={ICONS.home} style={{width:"100%",height:"100%",resizeMode:"stretch"}}/>
       </TouchableOpacity>
-      <TouchableOpacity
-      onPress={()=>props.navigation.navigate('GuestBottomTabStack')}
+        <TouchableOpacity
+        style={{width:scale(22),height:verticalScale(22)}}
+      // onPress={()=>props.navigation.navigate('GuestBottomTabStack')}
       >
-        <Text>GuestList</Text>
+                 <Image source={ICONS.add} style={{width:"100%",height:"100%",resizeMode:"stretch"}}/>
       </TouchableOpacity>
-      <TouchableOpacity
-      onPress={()=>props.navigation.navigate('SecondBottomTabStack')}
+        <TouchableOpacity
+        style={{width:scale(22),height:verticalScale(22)}}
+      // onPress={()=>props.navigation.navigate('SecondBottomTabStack')}
       >
-        <Text>Event</Text>
+                         <Image source={ICONS.user} style={{width:"100%",height:"100%",resizeMode:"stretch"}}/>
+        </TouchableOpacity>
+        <TouchableOpacity
+        style={{width:scale(22),height:verticalScale(22)}}
+      // onPress={()=>props.navigation.navigate('SecondBottomTabStack')}
+      >
+                         <Image source={ICONS.option} style={{width:"100%",height:"100%",resizeMode:"stretch"}}/>
       </TouchableOpacity>
       </View>
       </ScrollView>

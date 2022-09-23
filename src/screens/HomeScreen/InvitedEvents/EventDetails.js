@@ -2,8 +2,9 @@ import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {COLORS, IMAGE} from '../../../common/constants';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const EventDetails = () => {
+const EventDetails = (props) => {
   return (
     <ScrollView style={styles.MainContainer}>
       <View style={styles.container}>
@@ -16,55 +17,88 @@ const EventDetails = () => {
       </View>
       <View style={styles.header}>
         <Text
-         style={{
-          color: '#15AED6',
-                    fontSize: moderateScale(16),
-          fontWeight:'bold',
-          fontFamily: 'Poppins-SemiBold',
-        }}>
+          style={{
+            color: '#15AED6',
+            fontSize: moderateScale(16),
+            fontWeight: 'bold',
+            fontFamily: 'Poppins-Bold',
+          }}>
           Sub Events
         </Text>
       </View>
       <View style={styles.scrollView}>
-        <View style={styles.boxContainer}>
+        <TouchableOpacity
+          onPress={()=>props.navigation.navigate('SubEventDetails')}
+          style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem1} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+        onPress={()=>props.navigation.navigate('SubEventDetails')}
+        style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+        onPress={()=>props.navigation.navigate('SubEventDetails')}
+        style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem2} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+        onPress={()=>props.navigation.navigate('SubEventDetails')}
+        style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem1} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
-        <View style={styles.boxContainer}>
+        </TouchableOpacity>
+        <TouchableOpacity
+        onPress={()=>props.navigation.navigate('SubEventDetails')}
+        style={styles.boxContainer}>
           <View style={styles.imageContainer}>
             <Image source={IMAGE.lorem2} style={styles.subImageStyle} />
           </View>
           <Text style={[styles.fontstyle, {color: '#686868'}]}>Ceremoney</Text>
           <Text style={styles.fontstyle}>Thu Aug 30 at 05:30 PM</Text>
-        </View>
+        </TouchableOpacity>
       </View>
       <View style={styles.footerContainer}>
-      <View style={[styles.buttonContainer,{backgroundColor: "#E9F9F4",}]}><Text style={{color:"#31D6A2"}}>View invitation card</Text></View>
-        <View style={[styles.buttonContainer,{backgroundColor: "#FCFFE3",}]}><Text style={{color:"#95A704"}}>Add travel plan</Text></View>
+        <TouchableOpacity 
+          onPress={()=>props.navigation.navigate('ViewInvitationCard')}
+        style={[styles.buttonContainer, { backgroundColor: '#E9F9F4' }]}>
+          <Text
+            style={{
+              color: '#0BCF92',
+              fontSize: scale(12),
+              fontFamily: 'Poppins-Bold',
+            }}>
+            View invitation card
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={()=>props.navigation.navigate('TravelDetail')}
+          
+          style={[styles.buttonContainer, { backgroundColor: '#FCFFE3' }]}>
+          <Text
+            style={{
+              color: '#95A704',
+              fontSize: scale(12),
+              fontFamily: 'Poppins-Bold',
+            }}>
+            Add travel plan
+          </Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -153,20 +187,20 @@ const styles = StyleSheet.create({
     resizeMode: 'stretch',
   },
   footerContainer: {
-    marginTop:verticalScale(15),
+    marginTop: verticalScale(15),
     width: '100%',
-    height:verticalScale(60),
-    alignContent: "center",
-    justifyContent:"space-evenly",
-    flexDirection: "row",
-    backgroundColor:"white"
+    height: verticalScale(60),
+    alignContent: 'center',
+    justifyContent: 'space-evenly',
+    flexDirection: 'row',
+    backgroundColor: 'white',
   },
   buttonContainer: {
-    alignSelf: "center",
-    alignItems: "center",
-    justifyContent:"center",
-    width: scale(130),
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: scale(140),
     height: verticalScale(40),
-    borderRadius:moderateScale(10)
-  }
+    borderRadius: moderateScale(10),
+  },
 });
