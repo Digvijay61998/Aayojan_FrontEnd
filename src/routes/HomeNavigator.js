@@ -5,7 +5,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import Event from '../screens/Event';
 import GuestList from '../screens/GuestList';
-import Menu from '../screens/Menu';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {CustomHeader} from '../common/component';
 import ViewTodayEvent from '../screens/HomeScreen/TodayEvents/ViewTodayEvent';
@@ -16,6 +15,8 @@ import EventInvitedDetails from '../screens/HomeScreen/InvitedEvents/EventInvite
 import ViewInvitationCard from '../screens/HomeScreen/InvitedEvents/ViewInvitationCard';
 import TravelDetail from '../screens/HomeScreen/InvitedEvents/TravelDetail';
 import SubEventDetails from '../screens/HomeScreen/InvitedEvents/SubEventDetails';
+import CustomHeaderGuestList from '../common/component/CustomHeaderGuestList'
+import ImportContact from '../screens/ImportContact/ImportContact';
 
 const RootStackNavigator = createStackNavigator();
 const HomeStack = props => {
@@ -156,13 +157,21 @@ const SecondBottomTabStack = props => {
 
 const  GuestBottomTabStack = props => {
   return (
+    <>
+    <CustomHeaderGuestList />
     <RootStackNavigator.Navigator initialRouteName="GuestList">
       <RootStackNavigator.Screen
         name="GuestList"
         component={GuestList}
         options={{gestureEnabled: false, headerShown: false}}
       />
+      <RootStackNavigator.Screen
+        name="ImportContact"
+        component={ImportContact}
+        options={{gestureEnabled: false, headerShown: false}}
+      />
     </RootStackNavigator.Navigator>
+    </>
   );
 };
 
