@@ -17,6 +17,7 @@ import TravelDetail from '../screens/HomeScreen/InvitedEvents/TravelDetail';
 import SubEventDetails from '../screens/HomeScreen/InvitedEvents/SubEventDetails';
 import CustomHeaderGuestList from '../common/component/CustomHeaderGuestList'
 import ImportContact from '../screens/ImportContact/ImportContact';
+import AddNewContact from '../screens/ImportContact/AddNewContact';
 
 const RootStackNavigator = createStackNavigator();
 const HomeStack = props => {
@@ -168,6 +169,11 @@ const  GuestBottomTabStack = props => {
       <RootStackNavigator.Screen
         name="ImportContact"
         component={ImportContact}
+        options={{gestureEnabled: false, headerShown: false}}
+      />
+      <RootStackNavigator.Screen
+        name="AddNewContact"
+        component={AddNewContact}
         options={{gestureEnabled: false, headerShown: false}}
       />
     </RootStackNavigator.Navigator>

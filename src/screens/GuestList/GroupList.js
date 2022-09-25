@@ -40,8 +40,9 @@ const GroupList = () => {
                   if(currentSelctedELement == index)
                     {return(
                         <View style={styles.contactItem}>
-                            <View>
-                            <Text>{contact}</Text>
+                            <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
+                            <CheckBox />
+                            <Text style={{marginLeft:scale(5)}}>{contact}</Text>
                             </View>
                             <View style={styles.dot}></View>
                         </View>
@@ -74,8 +75,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: scale(20),
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottomColor:'rgba(110, 110, 110, 1)',
-    borderBottomWidth:0.5,
+    borderBottomColor:'rgba(110, 110, 110, 0.1)',
+    borderBottomWidth:1,
     paddingBottom:5
   },
   groupImage: {
@@ -98,8 +99,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   contactItem:{
-    borderBottomColor:'rgba(110, 110, 110, 1)',
-    borderBottomWidth:0.5,
+    borderBottomColor:'rgba(110, 110, 110, 0.1)',
+    borderBottomWidth:1,
     paddingHorizontal: scale(25),
     paddingVertical:verticalScale(10),
     flexDirection:'row',

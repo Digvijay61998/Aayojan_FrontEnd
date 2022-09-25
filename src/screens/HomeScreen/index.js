@@ -71,7 +71,7 @@ const HomeScreen = (props) => {
       </TouchableOpacity>
         <TouchableOpacity
         style={{width:scale(22),height:verticalScale(22)}}
-      // onPress={()=>props.navigation.navigate('GuestBottomTabStack')}
+      onPress={()=>props.navigation.navigate('GuestBottomTabStack')}
       >
                  <Image source={ICONS.add} style={{width:"100%",height:"100%",resizeMode:"stretch"}}/>
       </TouchableOpacity>

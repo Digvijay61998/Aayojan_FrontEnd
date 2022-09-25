@@ -16,12 +16,12 @@ const ModalPopup = ({isModalVisble , toggleModal , navigation}) => {
       <View style={styles.ModalBackground}>
           <View style={styles.modalContainer}>
             <View style={styles.headerTextContainer}>
-            <Text style={styles.modalHeaderText}>Add Contact</Text>
+             <Text style={styles.modalHeaderText}>Add Contact</Text> 
             <TouchableOpacity onPress={e=> toggleModal()}><Text style={styles.modalCloseIcon}>X</Text></TouchableOpacity>
             </View>
             <Text style={styles.modalText}>Choose what you'd like to do</Text>
             <View style={styles.modalButtonContainer}>
-              <TouchableOpacity><Text style={styles.modalButton}>New</Text></TouchableOpacity>
+              <TouchableOpacity onPress={e=> navigation.navigate('AddNewContact')}><Text style={styles.modalButton}>New</Text></TouchableOpacity>
               <TouchableOpacity onPress={e=> navigation.navigate('ImportContact')}><Text style={styles.modalButton}>Import</Text></TouchableOpacity>
             </View>
           </View>
@@ -65,6 +65,7 @@ const GuestList = (props) => {
     <ModalPopup navigation={props.navigation} isModalVisble={isModalVisble} toggleModal={toggleModal}/>
         <TouchableOpacity onPress={e=>setModalVisible(!isModalVisble)} style={styles.addButtonContainer}>
             {/* <Image style={styles.addIconStyle} source={ICONS.addIcon}/> */}
+            <Text style={styles.plusICon}>+</Text>
         </TouchableOpacity></>
   )
 }
@@ -118,13 +119,16 @@ const styles = StyleSheet.create({
     marginRight:4,
   },  
   addButtonContainer:{
-    height:scale(70),
-    width:scale(70),
+    height:scale(40),
+    width:scale(40),
     position:'absolute',
     bottom:verticalScale(70),
     right:scale(50),
+    borderRadius:verticalScale(100),
     backgroundColor:"#09F2DF",
     elevation: 10,
+    alignItems:'center',
+    justifyContent:'center',
   },
   addIconStyle:{
     height:'100%',
@@ -171,5 +175,10 @@ const styles = StyleSheet.create({
     fontSize:scale(16),
     fontWeight:"500",
     margin:scale(9)
+  },
+  plusICon:{
+    fontSize:scale(29),
+    color:'#FFF',
+    fontWeight:'bold'
   }
 })
