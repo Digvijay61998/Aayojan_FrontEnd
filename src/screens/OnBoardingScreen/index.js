@@ -40,6 +40,36 @@ export class OnBoardingScreen extends Component {
           // backgroundColor: '#59b2ab',
           image: <Image style={styles.sliderImage} source={IMAGE.onBoard4} />,
           title: (
+            <Text style={styles.slidesTextUp}>
+              Manage your Guests
+            </Text>
+          ),
+          subtitle: (
+            <Text style={styles.slidesText}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been</Text>
+          ),
+          style: styles.headerConatiner,
+        },
+        {
+          // backgroundColor: '#59b2ab',
+          image: <Image style={styles.sliderImage} source={IMAGE.onBoard3} />,
+          title: (
+            <Text style={styles.slidesTextUp}>
+              Manage your Guests
+            </Text>
+          ),
+          subtitle: (
+            <Text style={styles.slidesText}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been</Text>
+          ),
+          style: styles.headerConatiner,
+        },
+        {
+          // backgroundColor: '#59b2ab',
+          image: <Image style={styles.sliderImage} source={IMAGE.onBoard4} />,
+          title: (
             <Text style={styles.slidesTextUp}>Organize your calling Methods</Text>
           ),
           subtitle: (

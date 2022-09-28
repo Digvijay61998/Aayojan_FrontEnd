@@ -7,7 +7,7 @@ import Event from '../screens/Event';
 import GuestList from '../screens/GuestList';
 import Menu from '../screens/Menu';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
-import {CustomHeader} from '../common/component';
+import {CustomHeader,CustomFooter} from '../common/component';
 import ViewTodayEvent from '../screens/HomeScreen/TodayEvents/ViewTodayEvent';
 import ViewMyEvent from '../screens/HomeScreen/MyEvent/ViewMyEvent';
 import ViewEventAttend from '../screens/HomeScreen/InvitedEvents/ViewEventAttend';
@@ -29,6 +29,7 @@ const HomeStack = props => {
         options={{gestureEnabled: false, headerShown: false}}
       />
       </RootStackNavigator.Navigator>
+      <CustomFooter props={props}/>
       </View>
   );
 };

@@ -23,12 +23,43 @@ import { enableScreens } from 'react-native-screens';
 import {navigationRef,isMountedRef} from "./src/routes/rnnavigation"
 import RootNavigator from './src/routes/RootNavigator';
 import 'react-native-gesture-handler';
-
+import { onError } from "@apollo/client/link/error";
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  HttpLink,
+  from,
+} from "@apollo/client";
 
 enableScreens(true);
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const errorlink = onError(({ graphqlErrors, networkErrors }) => {
+    if (graphqlErrors) {
+      graphqlErrors.map(({ message, location, path }) => {
+        console.log("message",message,location,path);
+        alert(`graphql error ${message}`);
+      });
+    }
+    if (networkErrors) {
+      networkErrors.map(({ message, location, path }) => {
+        console.log("message",message,location,path);
+        alert(`graphql error ${message}`);
+      });
+    }
+  });
+
+  const link = from([
+    errorlink,
+    new HttpLink({ uri: "http://192.168.1.23:4500/graphql" }),
+  ]);
+  const client = new ApolloClient({
+    link: link,
+    cache: new InMemoryCache(),
+  });
+
   useEffect(() => {
     // setupNotification();
     isMountedRef.current = true;
@@ -37,9 +68,11 @@ export default function App() {
 
   return (
     // <Provider store={store}>
+      <ApolloProvider client={client}>
     <NavigationContainer ref={navigationRef}>
       <RootNavigator />
-    </NavigationContainer>
+      </NavigationContainer>
+    </ApolloProvider>
   // </Provider>
   );
 }

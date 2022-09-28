@@ -1,7 +1,9 @@
 import CustomHeader from "./CustomHeader";
-
+import PrivacyPolicy from "./Policy"
+import TermsAndCondition from "./Policy"
+import CustomFooter from './CustomFooter'
 export {
-    CustomHeader
+    CustomHeader,TermsAndCondition,PrivacyPolicy,CustomFooter
 };
 
 

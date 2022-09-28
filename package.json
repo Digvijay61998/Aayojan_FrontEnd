@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@react-native-community/checkbox": "^0.5.12",
     "@react-native-masked-view/masked-view": "^0.2.7",
     "@react-navigation/native": "^6.0.12",
@@ -17,6 +18,7 @@
     "@react-navigation/stack": "^6.2.3",
     "deprecated-react-native-prop-types": "^2.3.0",
     "formik": "^2.2.9",
+    "graphql": "^16.6.0",
     "link": "^1.5.1",
     "react": "18.1.0",
     "react-native": "^0.70.0",
@@ -24,6 +26,7 @@
     "react-native-calendars": "^1.1289.0",
     "react-native-element-dropdown": "^2.3.0",
     "react-native-gesture-handler": "^2.6.0",
+    "react-native-linear-gradient": "^2.6.2",
     "react-native-onboarding-swiper": "^1.2.0",
     "react-native-safe-area-context": "^4.3.3",
     "react-native-screens": "^3.17.0",

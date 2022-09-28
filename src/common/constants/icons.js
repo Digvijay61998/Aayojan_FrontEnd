@@ -7,6 +7,8 @@ const add = require("../../assets/icons/add.png")
 const home = require("../../assets/icons/home.png")
 const option = require("../../assets/icons/option.png")
 const user = require("../../assets/icons/user.png")
+const close = require("../../assets/icons/close.png")
+const next = require("../../assets/icons/next.png")
 
 
 
@@ -19,5 +21,7 @@ export default {
     add,
     home,
     option,
-    user
+    user,
+    close,
+    next
 }

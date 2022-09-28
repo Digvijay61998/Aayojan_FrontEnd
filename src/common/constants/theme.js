@@ -33,7 +33,7 @@ export const FONTS = {
   },
   textstyle: {
     fontFamily: 'Montserrat',
-    color: '#1D232E',
+    color: '#1D2226',
     fontSize: 16,
     fontWeight: '600',
     lineHeight: Scale(28),
