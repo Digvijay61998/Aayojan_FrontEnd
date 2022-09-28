@@ -4,7 +4,8 @@ import { ICONS } from '../constants'
 import { scale, verticalScale } from 'react-native-size-matters'
 import icons from '../constants/icons'
 
-const CustomFooter = (props) => {
+const CustomFooter = ({props}) => {
+  console.log("props",props);
   return (
     <View
     style={{
@@ -23,17 +24,17 @@ const CustomFooter = (props) => {
       />
     </TouchableOpacity>
     <TouchableOpacity
+        onPress={()=>props.navigation.navigate('EventBottomTabStack')}
       style={{width: scale(22), height: verticalScale(22)}}
-      // onPress={()=>props.navigation.navigate('GuestBottomTabStack')}
-    >
+      >
       <Image
         source={ICONS.add}
         style={{width: '100%', height: '100%', resizeMode: 'stretch'}}
-      />
+        />
     </TouchableOpacity>
     <TouchableOpacity
       style={{width: scale(22), height: verticalScale(22)}}
-      // onPress={()=>props.navigation.navigate('SecondBottomTabStack')}
+      onPress={()=>props.navigation.navigate('GuestBottomTabStack')}
     >
       <Image
         source={ICONS.user}

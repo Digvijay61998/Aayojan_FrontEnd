@@ -9,7 +9,10 @@ const option = require("../../assets/icons/option.png")
 const user = require("../../assets/icons/user.png")
 const close = require("../../assets/icons/close.png")
 const next = require("../../assets/icons/next.png")
-
+const calendar = require("../../assets/icons/calendar.png")
+const forwardArrow = require("../../assets/icons/forwardArrow.png")
+const addIcon = require("../../assets/icons/addButton.png")
+const Upload = require("../../assets/icons/Upload.png")
 
 
 export default {
@@ -23,5 +26,9 @@ export default {
     option,
     user,
     close,
-    next
+    next,
+    forwardArrow,
+    addIcon,
+    calendar,
+    Upload
 }

@@ -5,7 +5,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import Event from '../screens/Event';
 import GuestList from '../screens/GuestList';
-import Menu from '../screens/Menu';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {CustomHeader,CustomFooter} from '../common/component';
 import ViewTodayEvent from '../screens/HomeScreen/TodayEvents/ViewTodayEvent';
@@ -16,6 +15,14 @@ import EventInvitedDetails from '../screens/HomeScreen/InvitedEvents/EventInvite
 import ViewInvitationCard from '../screens/HomeScreen/InvitedEvents/ViewInvitationCard';
 import TravelDetail from '../screens/HomeScreen/InvitedEvents/TravelDetail';
 import SubEventDetails from '../screens/HomeScreen/InvitedEvents/SubEventDetails';
+import CustomHeaderGuestList from '../common/component/CustomHeaderGuestList'
+import ImportContact from '../screens/ImportContact/ImportContact';
+import AddNewContact from '../screens/ImportContact/AddNewContact';
+import WeddingDetails from '../screens/Event/WeddingDetails';
+import GuestsList from '../screens/Event/GuestsList';
+import Sub_EventDetails from '../screens/Event/Sub_EventDetails';
+import DetailsForm from '../screens/Event/DetailsForm';
+import MyEvents from '../screens/Event/MyEvents';
 
 const RootStackNavigator = createStackNavigator();
 const HomeStack = props => {
@@ -143,27 +150,109 @@ const RootBottomTabStack = props => {
   );
 };
 
-const SecondBottomTabStack = props => {
+const EventBottomTabStack = props => {
   return (
     <RootStackNavigator.Navigator initialRouteName="Event">
       <RootStackNavigator.Screen
         name="Event"
         component={Event}
-        options={{gestureEnabled: false, headerShown: false}}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Create Event</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
       />
+           <RootStackNavigator.Screen
+        name="WeddingDetails"
+        component={WeddingDetails}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Wedding Details</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
+      />
+                <RootStackNavigator.Screen
+        name="GuestsList"
+        component={GuestsList}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Wedding Details</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
+      />
+                    <RootStackNavigator.Screen
+        name="Sub_EventDetails"
+        component={Sub_EventDetails}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Sub-Event Details</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
+      />
+      
+      <RootStackNavigator.Screen
+        name="DetailsForm"
+        component={DetailsForm}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Wedding Details</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
+      />
+           <RootStackNavigator.Screen
+        name="MyEvents"
+        component={MyEvents}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>My Events</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
+      />
+      
     </RootStackNavigator.Navigator>
   );
 };
 
 const  GuestBottomTabStack = props => {
   return (
+    <>
+    <CustomHeaderGuestList />
     <RootStackNavigator.Navigator initialRouteName="GuestList">
       <RootStackNavigator.Screen
         name="GuestList"
         component={GuestList}
         options={{gestureEnabled: false, headerShown: false}}
       />
+      <RootStackNavigator.Screen
+        name="ImportContact"
+        component={ImportContact}
+        options={{gestureEnabled: false, headerShown: false}}
+      />
+      <RootStackNavigator.Screen
+        name="AddNewContact"
+        component={AddNewContact}
+        options={{gestureEnabled: false, headerShown: false}}
+      />
     </RootStackNavigator.Navigator>
+    </>
   );
 };
 
@@ -257,8 +346,8 @@ const HomeNavigator = props => (
       />
 
       <RootStackNavigator.Screen
-        name="SecondBottomTabStack"
-        component={SecondBottomTabStack}
+        name="EventBottomTabStack"
+        component={EventBottomTabStack}
         options={{
           headerShown: false,
           tabBarLabel: '',

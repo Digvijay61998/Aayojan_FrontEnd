@@ -113,9 +113,9 @@ const HomeScreen = props => {
       <TodayEvents props={props} />
       <MyEvent props={props} />
       <InvitedEvents props={props} />
-    </ScrollView>
-  );
-};
+      </ScrollView>
+  )
+}
 
 export default HomeScreen;
 
