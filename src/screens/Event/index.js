@@ -11,7 +11,6 @@ const Event = (props) => {
 
 
 
-
   return (
     <ScrollView style={styles.conatainer}>
       <View style={styles.headerContainer}>
