@@ -23,6 +23,10 @@ import GuestsList from '../screens/Event/GuestsList';
 import Sub_EventDetails from '../screens/Event/Sub_EventDetails';
 import DetailsForm from '../screens/Event/DetailsForm';
 import MyEvents from '../screens/Event/MyEvents';
+import Settings from '../screens/Settings';
+import Vendors from '../screens/Settings/Vendors';
+import Notification from '../screens/Settings/Notification';
+import BecomeVendor from '../screens/Settings/BecomeVendor';
 
 const RootStackNavigator = createStackNavigator();
 const HomeStack = props => {
@@ -66,7 +70,7 @@ const RootBottomTabStack = props => {
            options={{ gestureEnabled: true, headerShown: true, headerStyle: {
       },
                  headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
-              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Today events</Text>
+              <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>My events</Text>
                    <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
                    </View>
       ),
@@ -269,12 +273,56 @@ const ThardBottomTabStack = props => {
 };
 const FourthBottomTabStack = props => {
   return (
-    <RootStackNavigator.Navigator initialRouteName="Menu">
+    <RootStackNavigator.Navigator initialRouteName="Settings">
       <RootStackNavigator.Screen
-        name="Menu"
-        component={Menu}
-        options={{gestureEnabled: false, headerShown: false}}
+        name="Settings"
+        component={Settings}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>more menu</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
       />
+          <RootStackNavigator.Screen
+        name="Vendors"
+        component={Vendors}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>more menu</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
+      />
+            <RootStackNavigator.Screen
+        name="Notification"
+        component={Notification}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Notification</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
+      />
+               <RootStackNavigator.Screen
+        name="BecomeVendor"
+        component={BecomeVendor}
+        options={{ gestureEnabled: true, headerShown: true, headerStyle: {
+        },
+                   headerTitle: () => (<View style={{width:'100%',justifyContent:"space-between",flexDirection:"row",alignItems:"center"}}>
+                <Text style={{fontSize:moderateScale(16),fontFamily:'Roboto-Medium'}}>Become a Vendor</Text>
+                     <Image style={{ width: scale(80), height: verticalScale(70) ,marginTop:verticalScale(10)}} source={ICONS.logo} />
+                     </View>
+        ),
+        }}
+      />
+      
     </RootStackNavigator.Navigator>
   );
 };

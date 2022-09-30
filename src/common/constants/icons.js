@@ -13,6 +13,7 @@ const calendar = require("../../assets/icons/calendar.png")
 const forwardArrow = require("../../assets/icons/forwardArrow.png")
 const addIcon = require("../../assets/icons/addButton.png")
 const Upload = require("../../assets/icons/Upload.png")
+const settingHome = require("../../assets/icons/settingHome.svg")
 
 
 export default {
@@ -30,5 +31,6 @@ export default {
     forwardArrow,
     addIcon,
     calendar,
-    Upload
+    Upload,
+    settingHome
 }

@@ -10,44 +10,44 @@ const CustomFooter = ({props}) => {
     <View
     style={{
       width: '100%',
-      height: verticalScale(50),
+      height: verticalScale(40),
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',
       backgroundColor: 'white',
       marginTop: verticalScale(10),
     }}>
-    <TouchableOpacity style={{width: scale(22), height: verticalScale(22)}}>
+    <TouchableOpacity style={{width: scale(20), height: verticalScale(20)}}>
       <Image
         source={ICONS.home}
-        style={{width: '100%', height: '100%', resizeMode: 'stretch'}}
+        style={{width: '100%', height: '100%', resizeMode: 'contain'}}
       />
     </TouchableOpacity>
     <TouchableOpacity
         onPress={()=>props.navigation.navigate('EventBottomTabStack')}
-      style={{width: scale(22), height: verticalScale(22)}}
+      style={{width: scale(20), height: verticalScale(20)}}
       >
       <Image
         source={ICONS.add}
-        style={{width: '100%', height: '100%', resizeMode: 'stretch'}}
+        style={{width: '100%', height: '100%', resizeMode: 'contain'}}
         />
     </TouchableOpacity>
     <TouchableOpacity
-      style={{width: scale(22), height: verticalScale(22)}}
+      style={{width: scale(20), height: verticalScale(20)}}
       onPress={()=>props.navigation.navigate('GuestBottomTabStack')}
     >
       <Image
         source={ICONS.user}
-        style={{width: '100%', height: '100%', resizeMode: 'stretch'}}
+        style={{width: '100%', height: '100%', resizeMode: 'contain'}}
       />
     </TouchableOpacity>
     <TouchableOpacity
-      style={{width: scale(22), height: verticalScale(22)}}
-      // onPress={()=>props.navigation.navigate('SecondBottomTabStack')}
+      style={{width: scale(20), height: verticalScale(20)}}
+      onPress={()=>props.navigation.navigate('FourthBottomTabStack')}
     >
       <Image
         source={ICONS.option}
-        style={{width: '100%', height: '100%', resizeMode: 'stretch'}}
+        style={{width: '100%', height: '100%', resizeMode: 'contain'}}
       />
     </TouchableOpacity>
   </View>

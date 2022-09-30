@@ -7,7 +7,7 @@ const MyEvent = ({props}) => {
   return (
     <View style={styles.todayEventContainer}>
     <View style={styles.headerContainer}>
-      <Text style={styles.fontTitle}>Today events</Text>
+      <Text style={styles.fontTitle}>My events</Text>
       <TouchableOpacity
         onPress={()=>props.navigation.navigate('ViewMyEvent')}
       >
