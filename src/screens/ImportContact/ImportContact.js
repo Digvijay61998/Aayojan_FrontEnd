@@ -8,7 +8,7 @@ import CheckBox from '@react-native-community/checkbox';
 
 
 
-const ImportContact = () => {
+const ImportContact = ({navigation}) => {
     const [allContacts,setAllContacts] = useState([]);
     const [reloadPage , setReloadPage] = useState();
     const [selectedContacts, setSelectedContacts] = useState([]);
@@ -76,7 +76,7 @@ const ImportContact = () => {
     <ScrollView>
         <Text style={{display:'none'}}>{reloadPage}</Text>
         <View style={styles.topBar}>
-            <TouchableOpacity style={styles.topBarElement}><Text style={styles.topBarText}>Add new</Text></TouchableOpacity>
+            <TouchableOpacity onPress={e=> navigation.navigate('AddNewContact')} style={styles.topBarElement}><Text style={styles.topBarText}>Add new</Text></TouchableOpacity>
             <TouchableOpacity style={{...styles.topBarElement,...styles.activeELement}}><Text style={styles.topBarText}>Contacts</Text></TouchableOpacity>
         </View>
         <View style={styles.SearchBar}>

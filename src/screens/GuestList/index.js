@@ -49,7 +49,7 @@ const GuestList = (props) => {
           <Image source={IMAGE.searchIcon} style={styles.searchIcon}/>
         </View>
         <View style={styles.secondContainer}>
-          <Text style={styles.TextStyles}>Analytics</Text>
+          <TouchableOpacity onPress={e=>props.navigation.navigate('AnalyticsScreen')}><Text style={styles.TextStyles}>Analytics</Text></TouchableOpacity>
           <Dropdown
           data={data}
           labelField="label"
